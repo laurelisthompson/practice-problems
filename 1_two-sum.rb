@@ -2,6 +2,20 @@
 # Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 # You may assume that each input would have exactly one solution, and you may not use the same element twice.
 # You can return the answer in any order
+
+# EXAMPLE 1:
+# Input: nums = [2,7,11,15], target = 9
+# Output: [0,1]
+# Output: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+# EXAMPLE 2:
+# Input: nums = [3,2,4], target = 6
+# Output: [1,2]
+
+# EXAMPLE 3:
+# Input: nums = [3,3], target = 6
+# Output: [0,1]
+
 def two_sum(nums, target)
   (0...nums.length - 1).each do |i1|
     x = i1 + 1
@@ -11,19 +25,4 @@ def two_sum(nums, target)
       end
     end
   end
-end
-
-
-# REVERSE INTEGER
-# Given a signed 32-bit integer x, return x with its digits reversed. 
-# If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
-# Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
-def reverse(x)
-    x = x < 0 ? -x.to_s.reverse.to_i : x.to_s.reverse.to_i
-        
-    if (x > 2147483647) || (x < -2147483648)
-        x = 0
-    end
-    
-    return x
 end
